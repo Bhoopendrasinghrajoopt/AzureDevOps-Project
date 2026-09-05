@@ -5,13 +5,13 @@ module "resource_group_name" {
 
 
 module "azurerm_storage_account" {
-  depends_on = [ module.resource_group_name ]
-  source = "../../modules/Storage_Account"
-  storage = var.storage
-  
+  depends_on = [module.resource_group_name]
+  source     = "../../modules/Storage_Account"
+  storage    = var.storage
+
 }
 module "azurerm_virtual_network" {
-depends_on = [ module.resource_group_name ]
-source = "../../modules/Virtual_Network"
-VNS = var.vnet
+  depends_on = [module.resource_group_name]
+  source     = "../../modules/Virtual_Network"
+  VNS        = var.vnet
 }
